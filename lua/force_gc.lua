@@ -1,0 +1,1 @@
+../rime-frost/lua/force_gc.lua

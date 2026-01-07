@@ -23,10 +23,6 @@
 #
 # 此行之后不能写注释
 
-噷	hm
-呣	m
-呒	m
-
 有	u	3
 又	u	2
 由	u	1
@@ -56,6 +52,7 @@ domain	domain
 TODO	todo
 Dota	dota
 main	main
+Amazon	amz
 Amazon	amazon
 NASA	nasa
 gone	gone
