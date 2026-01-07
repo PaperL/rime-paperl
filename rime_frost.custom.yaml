@@ -11,6 +11,13 @@ patch:
 # make '\' go into the candidate box
   speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`/\\
   speller/initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA\\
+  speller/algebra/+:
+    - xlit/āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü/aaaaooooeeeeiiiiuuuuvvvvv/
+    - xform/^ng$/eng/
+    - xform/ńg|ňg|ǹg/eng/
+    - xform/ń|ň|ǹ/en/
+  translator/dictionary: rime_frost_lmdg
+  radical_reverse_lookup/dictionary: rime_frost_lmdg
 # or customize punctuator to make '\' go into the candidate box like below(please uncomment yourself)
 #  punctuator/half_shape:
 #    "\\": ["\\"]

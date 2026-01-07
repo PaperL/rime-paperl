@@ -1,0 +1,21 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: rime_frost_lmdg
+version: "2025-01-07"
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - RIME-LMDG/dicts/zi
+  - RIME-LMDG/dicts/jichu
+  - RIME-LMDG/dicts/lianxiang
+  - RIME-LMDG/dicts/duoyin
+  - RIME-LMDG/dicts/cuoyin
+  - RIME-LMDG/dicts/renming
+  - RIME-LMDG/dicts/diming
+  - RIME-LMDG/dicts/shici
+  - RIME-LMDG/dicts/shuxue
+  - RIME-LMDG/dicts/wuzhong
+  - RIME-LMDG/dicts/dikuang
+...

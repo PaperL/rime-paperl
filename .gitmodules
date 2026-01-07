@@ -4,3 +4,6 @@
 [submodule "rime_latex"]
 	path = rime_latex
 	url = git@github.com:shenlebantongying/rime_latex.git
+[submodule "RIME-LMDG"]
+	path = RIME-LMDG
+	url = git@github.com:amzxyz/RIME-LMDG.git
