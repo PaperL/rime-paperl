@@ -1,0 +1,36 @@
+# Rime table
+#@/db_name	custom_latex_user
+#@/db_type	tabledb
+#@/rime_version	1.11.2
+#@/tick	52
+Δ	\Delta	1
+Ε	\Epsilon	1
+⇒	\Rightarrow	1
+§	\S	1
+α	\alpha	1
+≈	\approx	9
+β	\beta	1
+⋅	\cdot	5
+°	\degree	14
+δ	\delta	1
+ϵ	\epsilon	1
+⩵	\eqeq	1
+≡	\equiv	1
+γ	\gamma	1
+≥	\ge	1
+≥	\geq	1
+―	\horizbar	1
+∞	\infty	2
+λ	\lambda	1
+μ	\mu	2
+≠	\ne	1
+ω	\omega	1
+±	\pm	1
+∝	\propto	1
+→	\rightarrow	5
+⤍	\rightbkarrow	1
+⤚	\righttail	1
+□	\square	2
+∑	\sum	3
+θ	\theta	4
+×	\times	2

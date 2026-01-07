@@ -1,0 +1,104 @@
+patch:
+  style:
+    color_scheme: my_solarized_light
+    color_scheme_dark: my_solarized_dark
+  preset_color_schemes:
+    my_solarized_light:
+      name: "my_solarized_light"
+      font_face: "GenWanMin2TW-R, SourceHanSerif-Regular"
+      font_point: 16.0
+      label_font_face: "GenWanMin2TW-L, SourceHanSerif-Light"
+      label_font_point: 12.0
+      comment_font_face: "GenWanMin2TW-EL, SourceHanSerif-ExtraLight"
+      comment_font_point: 12.0
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      inline_preedit: true
+      corner_radius: 8.0
+      border_height: -3.0
+      line_spacing: 5.0
+      base_offset: 5.0
+      alpha: 0.9
+      color_space: srgb
+      back_color: 0xE3F6FD                    # Candidate Background
+      hilited_candidate_back_color: 0xD5E8EE  # Candidate Background Selected
+      candidate_text_color: 0x837B65          # Candidate Foreground
+      hilited_candidate_text_color: 0xD28B26  # Candidate Foreground Selected
+      label_color: 0x0089B5                   # Candidate Foreground Label
+      hilited_candidate_label_color: 0x164BCB # Candidate Foreground Label Selected
+      comment_text_color: 0x009985            # Candidate Foreground Comment
+      hilited_comment_text_color: 0x98A12A    # Candidate Foreground Comment Selected
+      preedit_back_color: 0x362B00            # Preedit Background
+      hilited_back_color: 0x423607            # Preedit Background Selected
+      text_color: 0x969483                    # Preedit Foreground
+      hilited_text_color: 0x0089B5            # Preedit Foreground Selected
+    my_solarized_dark:
+      name: "my_solarized_dark"
+      font_face: "GenWanMin2TW-R, SourceHanSerif-Regular"
+      font_point: 16.0
+      label_font_face: "GenWanMin2TW-L, SourceHanSerif-Light"
+      label_font_point: 12.0
+      comment_font_face: "GenWanMin2TW-EL, SourceHanSerif-ExtraLight"
+      comment_font_point: 12.0
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      inline_preedit: true
+      corner_radius: 8.0
+      border_height: -3.0
+      line_spacing: 5.0
+      base_offset: 5.0
+      alpha: 0.9
+      color_space: srgb
+      back_color: 0x362B00                    # Candidate Background
+      hilited_candidate_back_color: 0x423607  # Candidate Background Selected
+      candidate_text_color: 0x969483          # Candidate Foreground
+      hilited_candidate_text_color: 0xD28B26  # Candidate Foreground Selected
+      label_color: 0x0089B5                   # Candidate Foreground Label
+      hilited_candidate_label_color: 0x164BCB # Candidate Foreground Label Selected
+      comment_text_color: 0x009985            # Candidate Foreground Comment
+      hilited_comment_text_color: 0x98A12A    # Candidate Foreground Comment Selected
+      preedit_back_color: 0xE3F6FD            # Preedit Background
+      hilited_back_color: 0xD5E8EE            # Preedit Background Selected
+      text_color: 0x837B65                    # Preedit Foreground
+      hilited_text_color: 0x0089B5            # Preedit Foreground Selected
+    my_solarized_test:
+      name: "my_solarized_test"
+      font_face: "SourceHanSerif-Heavy"
+      font_point: 20.0
+      candidate_list_layout: stacked
+      text_orientation: horizontal
+      inline_preedit: true
+      corner_radius: 8.0
+      border_height: -3.0
+      line_spacing: 5.0
+      base_offset: 5.0
+      color_space: srgb
+      back_color: 0xE3F6FD    # Testing Squirrel Designer Color Code
+      candidate_text_color: 0x847C5F
+      comment_text_color: 0x009A80
+      label_color: 0x0087BD
+      hilited_candidate_back_color: 0xD5E8EE
+      hilited_candidate_text_color: 0xD88D00
+      hilited_comment_text_color: 0x99A400
+      hilited_candidate_label_color: 0x596000
+      text_color: 0x96957F
+      hilited_text_color: 0x0087BD
+
+# Solarized Color Table in BGR HEX
+# base03	0x362B00  # Dark background
+# base02	0x423607  # Dark background highlight
+# base01	0x756E58  # Light foreground highlight / Dark foreground secondary
+# base00	0x837B65  # Light foreground primary
+# base0	  0x969483  # Dark foreground primary
+# base1	  0xA1A193  # Dark foreground highlight / Light foreground secondary
+# base2	  0xD5E8EE  # Light background highlight
+# base3	  0xE3F6FD  # Light background
+# yellow	0x0089B5
+# orange	0x164BCB
+# red	    0x2F32DC
+# magenta	0x8236D3
+# violet	0xC4716C
+# blue    0xD28B26
+# cyan    0x98A12A
+# green   0x009985
+# https://ethanschoonover.com/solarized/

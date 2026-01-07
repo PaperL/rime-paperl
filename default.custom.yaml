@@ -1,0 +1,23 @@
+patch:
+  switcher/hotkeys:
+    - "Control+Shift+grave"
+  schema_list:
+    - schema: rime_frost
+    - schema: latex
+  menu/page_size: 8
+  ascii_composer:
+    good_old_caps_lock: true  # true | false (false 时 switch_key 无效)
+    switch_key:
+      Caps_Lock: commit_code  # commit_code | commit_text | clear
+      Shift_L: commit_code    # commit_code | commit_text | inline_ascii | clear | noop
+      Shift_R: noop           # commit_code | commit_text | inline_ascii | clear | noop
+      Control_L: noop         # commit_code | commit_text | inline_ascii | clear | noop
+      Control_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
+  # 若 MacOS 设置中使用 Capslock 切换中英，则该配置没有任何效果（Caps_Lock 功能被系统覆盖）
+  # 若关闭系统中 Capslock 切换中英，则 good_old_caps_lock 开启表示以标准大小写切换功能覆盖 Caps_Lock 功能
+  
+  # Failed
+  # key_binder/+:
+  #   bindings/+:
+  #     - { when: always, select: .next, accept: Control+Shift+1 }                  # 在最近的两个方案之间切换
+  #     - { when: always, select: .next, accept: Control+Shift+exclam }             # 在最近的两个方案之间切换

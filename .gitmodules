@@ -1,0 +1,6 @@
+[submodule "rime-frost"]
+	path = rime-frost
+	url = git@github.com:gaboolic/rime-frost.git
+[submodule "rime_latex"]
+	path = rime_latex
+	url = git@github.com:shenlebantongying/rime_latex.git
