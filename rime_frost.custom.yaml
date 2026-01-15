@@ -47,6 +47,10 @@ patch:
     db_class: tabledb
     tips: "[LaTeX]"
 
+  latex_auto_commit:
+    enable_log: false
+    fast_commit_single_candidate: false
+
   # Pin candidates. Format: "code<Tab>word1 word2"
   pin_cand_filter/+:
     - w	我
