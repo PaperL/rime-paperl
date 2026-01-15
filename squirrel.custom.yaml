@@ -5,11 +5,11 @@ patch:
   preset_color_schemes:
     my_solarized_light:
       name: "my_solarized_light"
-      font_face: "GenWanMin2TW-R, SourceHanSerif-Regular"
+      font_face: "GenWanMin2TW-R, SourceHanSerif-Regular, Jigmo, Jigmo2, Jigmo3"
       font_point: 16.0
-      label_font_face: "GenWanMin2TW-L, SourceHanSerif-Light"
+      label_font_face: "GenWanMin2TW-L, SourceHanSerif-Light, Jigmo, Jigmo2, Jigmo3"
       label_font_point: 12.0
-      comment_font_face: "GenWanMin2TW-EL, SourceHanSerif-ExtraLight"
+      comment_font_face: "GenWanMin2TW-EL, SourceHanSerif-ExtraLight, Jigmo, Jigmo2, Jigmo3"
       comment_font_point: 12.0
       candidate_list_layout: linear
       text_orientation: horizontal
