@@ -44,6 +44,8 @@ Each trigger writes one CSV row containing the timestamp, schema, previous Rime 
 
 If the CSV cannot be written, the semicolon is consumed but the composition remains open so the input is not silently lost. The implementation is in [`lua/candidate_logger.lua`](lua/candidate_logger.lua) and is enabled by [`rime_frost.custom.yaml`](rime_frost.custom.yaml).
 
+Processed logs are moved to `candidate_logs/archive/`; both active and archived CSV files remain local and are ignored by Git. Add a `_processed_YYYYMMDD-HHMMSS` suffix when archiving so a new log from the same day cannot overwrite an older archive. Handle an entry according to the desired result: if the word already exists but is ordered too low, add it to `pin_cand_filter`; if it is absent, add an exact entry to [`custom_phrase.txt`](custom_phrase.txt); use user-frequency tuning only when the problem is learned history rather than a stable preference. Redeploy, verify the input, and archive the daily CSV only after every row in that file has been handled.
+
 ## Pin candidates: pin_cand_filter vs custom_phrase.txt
 
 There are two ways to force preferred candidates:

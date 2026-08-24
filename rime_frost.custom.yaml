@@ -29,6 +29,18 @@ patch:
     - xform/ń|ň|ǹ/en/
   translator/dictionary: rime_frost_lmdg
   radical_reverse_lookup/dictionary: rime_frost_lmdg
+
+  # 万象 LTS 简体语法模型；参数与 RIME-LMDG 当前推荐配置保持一致。
+  grammar:
+    language: wanxiang-lts-zh-hans
+    collocation_max_length: 6
+    collocation_min_length: 3
+    collocation_penalty: -14
+    non_collocation_penalty: -6
+    weak_collocation_penalty: -100
+    rear_penalty: -20
+  translator/contextual_suggestions: false
+  translator/max_homophones: 8
 # or customize punctuator to make '\' go into the candidate box like below(please uncomment yourself)
 #  punctuator/half_shape:
 #    "\\": ["\\"]
@@ -96,6 +108,9 @@ patch:
     - ni	你
     - ma	吗 嘛
     - zh	这
+    # 覆盖 Frost 默认的 `you -> 又`、`zai -> 再 在`，其余候选仍按词频排序。
+    - you	有
+    - zai	在
     - dd	等等
     - dddd	等等等等
     - gg	刚刚
