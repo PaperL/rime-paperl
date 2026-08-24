@@ -6,6 +6,10 @@ patch:
   # Frost 新版的候选置顶过滤器受 pin_cand 开关控制；默认保持启用。
   switches/@8/reset: 1
 
+  # 候选窗口打开时按分号，记录当前页候选和上一次上屏内容，然后清除输入。
+  # 放在 processor 队列最前，覆盖原有的“分号选择第 2 候选”行为。
+  "engine/processors/@before 0": lua_processor@*candidate_logger
+
   # 连续输入时按反斜杠，定位到当前未确认部分的第一个音节进行单字选择。
   # 空输入时不触发，保留反斜杠作为 LaTeX 输入前缀。
   key_binder/bindings/+:

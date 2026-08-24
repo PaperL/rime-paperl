@@ -25,4 +25,7 @@ rime_patch
 
 backups/
 
+# Local candidate feedback logs
+candidate_logs/*.csv
+
 temp/

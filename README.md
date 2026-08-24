@@ -29,6 +29,21 @@ Logging (optional):
 - Set `latex_auto_commit/enable_log: true` in [`rime_frost.custom.yaml`](rime_frost.custom.yaml).
 - Logs are written to [`logs/latex_auto_commit.log`](logs/latex_auto_commit.log).
 
+## Candidate-page feedback logging
+
+When the candidate menu is open, press `;` to record the visible candidate page and then clear the composition, like pressing `Escape`. Nothing is committed. Outside a candidate menu, `;` keeps its normal punctuation behavior. This replaces the original `;` shortcut for selecting candidate 2; use the `2` key for that selection instead.
+
+Daily CSV files are created in the Rime user directory only when the shortcut is used:
+
+- Directory: `~/Library/Rime/candidate_logs/`
+- Path pattern: `~/Library/Rime/candidate_logs/candidate_log_YYYYMMDD.csv`
+- Example for 2026-08-24: `candidate_logs/candidate_log_20260824.csv`
+- The files are local runtime data and are ignored by Git.
+
+Each trigger writes one CSV row containing the timestamp, schema, previous Rime commit, raw input, page number, highlighted rank, and candidate count. Every candidate then contributes `text`, `comment`, and `type` columns in display order. The number of candidate column groups follows the number of candidates actually present on that page.
+
+If the CSV cannot be written, the semicolon is consumed but the composition remains open so the input is not silently lost. The implementation is in [`lua/candidate_logger.lua`](lua/candidate_logger.lua) and is enabled by [`rime_frost.custom.yaml`](rime_frost.custom.yaml).
+
 ## Pin candidates: pin_cand_filter vs custom_phrase.txt
 
 There are two ways to force preferred candidates:
@@ -76,6 +91,7 @@ Switcher:
 - `Control+Shift+grave`: open schema switcher.
 
 Composing and paging (`key_binder/bindings`):
+- `semicolon` (`;`, when has menu): log the visible candidate page, then clear the composition without committing; candidate 2 remains available through the `2` key.
 - `backslash` (`\\`, when composing): move to the first syllable of the current unconfirmed input for single-character selection (`Home`, then `Shift+Right`); with an empty composition, `\\` remains the LaTeX prefix.
 - `Tab` (when composing): move caret to next syllable (`Shift+Right`).
 - `Shift+Tab` (when composing): move caret to previous syllable (`Shift+Left`).
