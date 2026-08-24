@@ -11,13 +11,10 @@ How it works:
 - `recognizer/patterns/latex_input` matches `^\[a-zA-Z]+$`, and `table_translator@latex_input` reads from [`latex.dict.yaml`](latex.dict.yaml) and [`custom_latex_user.txt`](custom_latex_user.txt).
 - The Lua processor watches the context and commits a symbol when the input starts with `\` and a valid candidate exists.
 
-Default behavior (safe):
-- Only auto-commit when the candidate is fully matched (candidate comment is empty).
-- Example: `\alpha` auto-commits, but `\alp` does not.
-
-Fast commit (optional):
-- Enable `latex_auto_commit/fast_commit_single_candidate: true` in [`rime_frost.custom.yaml`](rime_frost.custom.yaml) to auto-commit as soon as the LaTeX candidate becomes unique.
-- This uses both [`latex.dict.yaml`](latex.dict.yaml) and [`custom_latex_user.txt`](custom_latex_user.txt) to determine uniqueness, so `\alp` can commit `α` without pressing any confirm key.
+Auto-commit behavior:
+- A symbol is committed only when the current Rime candidate menu contains exactly one candidate.
+- Completion and exact-match candidates are counted alike. For example, `\in` remains open because `\infty`, `\int`, and other completions still exist; `\infty` commits `∞` once it is the sole candidate.
+- Candidate-menu contents are authoritative, so custom and learned candidates are included in the uniqueness check.
 
 Relevant files:
 - [`rime_frost.custom.yaml`](rime_frost.custom.yaml)
@@ -27,7 +24,7 @@ Relevant files:
 
 Logging (optional):
 - Set `latex_auto_commit/enable_log: true` in [`rime_frost.custom.yaml`](rime_frost.custom.yaml).
-- Logs are written to [`logs/latex_auto_commit.log`](logs/latex_auto_commit.log).
+- Logs are written to `candidate_logs/latex_auto_commit.log`.
 
 ## Candidate-page feedback logging
 
@@ -41,6 +38,8 @@ Daily CSV files are created in the Rime user directory only when the shortcut is
 - The files are local runtime data and are ignored by Git.
 
 Each trigger writes one CSV row containing the timestamp, schema, previous Rime commit, raw input, page number, highlighted rank, and candidate count. Every candidate then contributes `text`, `comment`, and `type` columns in display order. The number of candidate column groups follows the number of candidates actually present on that page.
+
+For diagnosis, the same `;` press also writes `candidate_logs/candidate_debug_YYYYMMDD.csv`. This companion row records the active segment state and asks Rime to prepare up to 20 filtered candidates, including internal and dynamic candidate types. It helps distinguish a visually unique candidate from hidden or duplicate internal candidates.
 
 If the CSV cannot be written, the semicolon is consumed but the composition remains open so the input is not silently lost. The implementation is in [`lua/candidate_logger.lua`](lua/candidate_logger.lua) and is enabled by [`rime_frost.custom.yaml`](rime_frost.custom.yaml).
 
