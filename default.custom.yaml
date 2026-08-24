@@ -4,7 +4,7 @@ patch:
   schema_list:
     - schema: rime_frost
     - schema: latex
-  menu/page_size: 8
+  menu/page_size: 5
   ascii_composer:
     good_old_caps_lock: true  # true | false (false 时 switch_key 无效)
     switch_key:

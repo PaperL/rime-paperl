@@ -40,3 +40,74 @@ There are two ways to force preferred candidates:
 Rule of thumb:
 - Use `pin_cand_filter` for small candidate sets or specific full codes.
 - Use [`custom_phrase.txt`](custom_phrase.txt) when the candidate list is large or you need a guaranteed top result.
+
+## Manual User Learning Frequency
+
+User learning can override static dictionary weights. If a candidate has `*`, it is a learned user phrase (see [`lua/is_in_user_dict.lua`](lua/is_in_user_dict.lua)).
+
+Learning-driven frequency tuning:
+
+1. Edit only target lines in the current snapshot, for example [`sync/a2a2a7e4-ca81-44f5-98f5-51a5e57ca9a7/rime_frost_lmdg.userdb.txt`](sync/a2a2a7e4-ca81-44f5-98f5-51a5e57ca9a7/rime_frost_lmdg.userdb.txt).
+2. Use small changes first, then verify input behavior.
+3. Keep changes focused; avoid broad edits.
+4. During verification, avoid committing the undesired candidate once, or it may be learned back immediately.
+
+Quick field reference:
+
+- `c`: usage count (higher usually ranks higher)
+- `t`: recency tick context
+- `d`: internal model factor
+
+## Deploy & Sync Button
+
+- `Deploy`: rebuilds schema and dictionaries (for example `rime_frost_lmdg`).
+- `Sync user data`: merges snapshot txt into live userdb, then writes merged results back to snapshot txt.
+- `Sync user data` is merge + write-back, not one-way overwrite. Manual edits can be changed by merge results.
+
+Even on one machine, multiple folders under [`sync`](sync) can exist because sync is keyed by `installation_id` (see [`installation.yaml`](installation.yaml)), not strictly by physical devices.
+
+## Shortcut
+
+This section records currently enabled shortcuts from the active config (`default.yaml` + `rime_frost.schema.yaml` + `rime_frost.custom.yaml`). Commented examples are not included.
+
+Switcher:
+- `F4`: open schema switcher.
+- `Control+grave`: open schema switcher.
+- `Control+Shift+grave`: open schema switcher.
+
+Composing and paging (`key_binder/bindings`):
+- `backslash` (`\\`, when composing): move to the first syllable of the current unconfirmed input for single-character selection (`Home`, then `Shift+Right`); with an empty composition, `\\` remains the LaTeX prefix.
+- `Tab` (when composing): move caret to next syllable (`Shift+Right`).
+- `Shift+Tab` (when composing): move caret to previous syllable (`Shift+Left`).
+- `Alt+Right` (when composing): move caret to next syllable (`Shift+Right`).
+- `Alt+Left` (when composing): move caret to previous syllable (`Shift+Left`).
+- `minus` (when has menu): page up.
+- `equal` (when has menu): page down.
+
+Mode toggles:
+- `Control+Shift+3`: toggle `ascii_punct`.
+- `Control+Shift+numbersign`: toggle `ascii_punct`.
+- `Control+Shift+4`: toggle `traditionalization`.
+- `Control+Shift+dollar`: toggle `traditionalization`.
+
+Editing:
+- `Control+k` (when composing): send `Shift+Delete`.
+
+Numpad mapping (when composing):
+- `KP_0`..`KP_9`: map to `0`..`9`.
+- `KP_Decimal`: map to `period`.
+
+Select-character Lua keys (`key_binder` root):
+- `bracketleft` (`[`): `select_first_character`.
+- `bracketright` (`]`): `select_last_character`.
+
+ASCII composer switch behavior:
+- `Caps_Lock`: `clear`.
+- `Shift_L`: `commit_code`.
+- `Shift_R`: `noop`.
+- `Control_L`: `noop`.
+- `Control_R`: `noop`.
+
+Notes:
+- `rime_frost.custom.yaml` adds the composing-only `backslash` binding; it also patches translators/processors and pin candidates.
+- If you later enable `cold_word_drop`, extra shortcut keys (for example `Control+j` / `Control+d`) can be added explicitly.

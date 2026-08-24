@@ -15,7 +15,13 @@ import_tables:
   - RIME-LMDG/dicts/renming
   - RIME-LMDG/dicts/diming
   - RIME-LMDG/dicts/shici
-  - RIME-LMDG/dicts/shuxue
   - RIME-LMDG/dicts/wuzhong
-  - RIME-LMDG/dicts/dikuang
+  - RIME-LMDG/dicts/fangyan
+  - RIME-LMDG/dicts/huaxue
+  - RIME-LMDG/dicts/mingren
+  - RIME-LMDG/dicts/mixed
+  - RIME-LMDG/dicts/taifeng
+  - RIME-LMDG/dicts/yaopin
+  - RIME-LMDG/dicts/yiren
+  - RIME-LMDG/dicts/yixue
 ...

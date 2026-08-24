@@ -23,4 +23,6 @@ rime_patch
 # Archives
 *.zip
 
+backups/
+
 temp/
