@@ -14,6 +14,7 @@ sync/
 *.userdb
 installation.yaml
 user.yaml
+custom_latex_user.txt
 
 # Rime tooling artifacts (if generated locally)
 rime_console
@@ -35,3 +36,6 @@ candidate_logs/*.log
 candidate_logs/archive/*.csv
 
 temp/
+
+# Downloaded source material and extraction workspace for custom dictionaries
+/custom_dicts/_research/

@@ -24,4 +24,7 @@ import_tables:
   - RIME-LMDG/dicts/yaopin
   - RIME-LMDG/dicts/yiren
   - RIME-LMDG/dicts/yixue
+  # Local domain dictionaries; keep after LMDG so upstream weights win on duplicates.
+  - custom_dicts/networking_ml_sys
+  - custom_dicts/arknights_endfield
 ...
